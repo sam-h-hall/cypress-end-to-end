@@ -103,6 +103,7 @@ export default function Form() {
           name='name'
           value={formState.name}
           onChange={inputChange}
+          data-cy="name" // added for cypress
         />
         {errors.name.length > 0 ? <p className='error'>{errors.name}</p> : null}
       </label>
@@ -113,6 +114,7 @@ export default function Form() {
           name='email'
           value={formState.email}
           onChange={inputChange}
+          data-cy="email" // added for cypress
         />
         {errors.email.length > 0 ? (
           <p className='error'>{errors.email}</p>
@@ -124,6 +126,7 @@ export default function Form() {
           name='motivation'
           value={formState.motivation}
           onChange={inputChange}
+          data-cy="motivation"
         />
         {errors.motivation.length > 0 ? (
           <p className='error'>{errors.motivation}</p>
@@ -149,7 +152,7 @@ export default function Form() {
       </label>
       {/* displaying our post request data */}
       <pre>{JSON.stringify(post, null, 2)}</pre>
-      <button disabled={buttonDisabled}>Submit</button>
+      <button data-cy="submit" disabled={buttonDisabled}>Submit</button>
     </form>
   );
 }
